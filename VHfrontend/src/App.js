@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
 //import Components
 import Login from "./components/login"
+import Register from "./components/register"
 //import Pages
 import Homepage from "./pages/home"
 import GlobalLijst from "./pages/global_cijferlijst";
@@ -14,8 +15,9 @@ function App() {
   <BrowserRouter>
     <Routes>
       {/*<Route path="/" element={<  />} />*/}
-      <Route path="/login" element={<Login  />} />
-      <Route path="/" element={<Homepage  />} />
+      <Route path="/" element={<Login  />} />
+      <Route path="/register" element={<Register  />} />
+      <Route path="/home" element={<Homepage  />} />
       <Route path="/cijfer-lijsten" element={<GlobalLijst  />} />
       <Route path="/klas-lijsten" element={<KlasLijst  />} />
     </Routes>

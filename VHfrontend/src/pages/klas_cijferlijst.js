@@ -1,6 +1,5 @@
 import Nav from "../components/nav";
 
-
 export default function KlasLijst (){
     return(
         <container className="flex flex-row">

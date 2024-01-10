@@ -5,7 +5,9 @@ export default function GlobalLijst (){
 
         <container className="flex flex-row">
             <Nav/>
-            <h1>GlobalLijst</h1>
+            <div className="flex-1">
+                <h1>GlobalLijst</h1>
+            </div>
         </container>
     )
 }
