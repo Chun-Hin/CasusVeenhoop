@@ -10,10 +10,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    schoolclass:{
+        type: String,
+    },
+    subject:{
+        type: String,
+    },
     role: {
         type: String,
-        enum: ['Docent', 'Student'],
-        default: 'Student'
+        enum: ['docent', 'student'],
+        default: 'student'
     }
 });
 

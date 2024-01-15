@@ -20,7 +20,7 @@ app.use(cors())
 //configure environment variables
 dotenv.config();
 //configuring port
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 // Connection to MongoDB
 mongoose.connect(process.env.DATABASE_URL);
