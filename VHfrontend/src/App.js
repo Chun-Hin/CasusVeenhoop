@@ -1,13 +1,15 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {useEffect, useState} from "react";
 import './App.css';
 //import Components
 import Login from "./components/login"
 import Register from "./components/register"
 //import Pages
 import Homepage from "./pages/home"
-import GlobalLijst from "./pages/global_cijferlijst";
-import KlasLijst from "./pages/klas_cijferlijst";
-import {useEffect, useState} from "react";
+import Cijferlijst from "./pages/cijferlijst";
+import Docenten from "./pages/docenten";
+import Mijn_klas from "./pages/mijn_klas";
+import Vakken from "./pages/vakken";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -35,12 +37,20 @@ const App = () => {
               element={isLoggedIn ? <Homepage /> : <Navigate to="/" />}
           />s
           <Route
-              path="/cijfer-lijsten"
-              element={isLoggedIn ? <GlobalLijst /> : <Navigate to="/" />}
+              path="/cijferlijst"
+              element={isLoggedIn ? <Cijferlijst /> : <Navigate to="/" />}
           />
           <Route
-              path="/klas-lijsten"
-              element={isLoggedIn ? <KlasLijst /> : <Navigate to="/" />}
+              path="/docenten"
+              element={isLoggedIn ? <Docenten /> : <Navigate to="/" />}
+          />
+          <Route
+              path="/vakken"
+              element={isLoggedIn ? <Vakken /> : <Navigate to="/" />}
+          />
+          <Route
+              path="/mijn-klas"
+              element={isLoggedIn ? <Mijn_klas /> : <Navigate to="/" />}
           />
         </Routes>
       </BrowserRouter>
