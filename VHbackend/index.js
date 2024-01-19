@@ -10,8 +10,6 @@ import loginRoute from "./routes/auth/login.js";
 import classRoute from "./routes/class.js";
 import subjectRoute from "./routes/subject.js";
 import testRoute from "./routes/test.js";
-import teacherRoute from "./routes/teacher.js";
-import studentRoute from "./routes/student.js";
 import scoreRoute from "./routes/score.js";
 
 // Create an express application
@@ -37,8 +35,6 @@ app.use('/auth/login', loginRoute);
 app.use('/class', classRoute)
 app.use('/subject', subjectRoute)
 app.use('/test', testRoute)
-app.use('/teacher', teacherRoute)
-app.use('/student', studentRoute)
 app.use('/score', scoreRoute)
 
 // Port connection

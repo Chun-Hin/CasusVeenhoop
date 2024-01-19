@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
-    const [Schoolclass, setSchoolclass] = useState('');
+    const [className, setClassName] = useState('');
 
     const register = async (event) => {
         event.preventDefault();
@@ -14,7 +14,7 @@ const Register = () => {
             const response = await axios.post('http://localhost:3005/auth/register', {
                 username: Username,
                 password: Password,
-                schoolclass: Schoolclass,
+                className: className,
             });
             console.log(response.data);
 
@@ -39,7 +39,7 @@ const Register = () => {
     };
 
     const handleClassChange = (e) => {
-        setSchoolclass(e.target.value);
+        setClassName(e.target.value);
     };
 
 
@@ -93,15 +93,20 @@ const Register = () => {
                                     >
                                         Class:
                                     </label>
-                                    <input
-                                        name="schoolclass"
-                                        id="schoolclass"
+                                    <select
+                                        name="className"
+                                        id="className"
                                         placeholder="class"
-                                        value={Schoolclass}
+                                        value={className}
                                         onChange={handleClassChange}
                                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                                         required
-                                    />
+                                    >
+                                        <option value="" disabled selected>Select class</option>
+                                        <option value="SD3A">SD3A</option>
+                                        <option value="SD3B">SD3B</option>
+                                        <option value="SD3C">SD3C</option>
+                                    </select>
                                 </div>
                                 <button
                                     type="submit"

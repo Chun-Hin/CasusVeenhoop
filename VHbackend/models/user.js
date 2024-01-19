@@ -10,12 +10,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    schoolclass:{
-        type: String,
+    class: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Class'
     },
-    subject:{
-        type: String,
-    },
+    subjectId: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Subject'
+    }],
     role: {
         type: String,
         enum: ['docent', 'student'],
